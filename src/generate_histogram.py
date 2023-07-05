@@ -16,7 +16,8 @@ def plot_histogram(df, column, output_path):
 
 
 def main():
-    df = pd.read_csv("./data/processed/RH_procesado.csv")
+    reader = dtl.dataloader("./data/processed/RH_procesado.csv")
+    df = reader.load_data()
 
     # Asegúrate de que los datos estén correctamente procesados antes de intentar trazarlos
     plot_histogram(df, "Desercion", "./reports/figures/histograma_desercion.png")
